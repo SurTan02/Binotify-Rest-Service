@@ -4,7 +4,9 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app: Express = express();
-const port = process.env.PORT;
+
+/* TO DO: move to config file*/
+const port = process.env.BINOTIFY_APP_WEB_PORT || 8080;
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
