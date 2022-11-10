@@ -1,12 +1,9 @@
 import express, { Express, Request, Response } from "express";
-import dotenv from "dotenv";
-
-dotenv.config();
+import { QueryError, RowDataPacket } from "mysql2";
+import { PORT } from "./config/vars.config";
+import { db } from "./db/connection";
 
 const app: Express = express();
-
-/* TO DO: move to config file*/
-const port = process.env.BINOTIFY_APP_WEB_PORT || 8080;
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
@@ -16,6 +13,6 @@ app.get("/", (req: Request, res: Response) => {
   );
 });
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
 });

@@ -16,7 +16,7 @@ services:
     environment:
       MYSQL_DATABASE: "${BINOTIFY_REST_SERVICE_DB_NAME:-database}"
       MYSQL_USER: "${BINOTIFY_REST_SERVICE_DB_USER:-user}"
-      MYSQL_PASSWORD: "{BINOTIFY_REST_SERVICE_DB_PASSWORD:-password}"
-      MYSQL_ROOT_PASSWORD: "{BINOTIFY_REST_SERVICE_DB_ROOT_PASSWORD:-password}"
+      MYSQL_PASSWORD: "${BINOTIFY_REST_SERVICE_DB_PASSWORD:-password}"
+      MYSQL_ROOT_PASSWORD: "${BINOTIFY_REST_SERVICE_DB_ROOT_PASSWORD:-password}"
     volumes:
       - ./database.sql:/docker-entrypoint-initdb.d/database.sql
