@@ -1,8 +1,13 @@
 import express, { Express, Request, Response } from "express";
 import { PORT } from "./config/vars.config";
 import * as db from "./db/connection";
+import { routes } from "./routes/routes";
+
+db.init();
 
 const app: Express = express();
+
+app.use(express.json())
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
@@ -12,7 +17,7 @@ app.get("/", (req: Request, res: Response) => {
   );
 });
 
-db.init();
+app.use(routes);
 
 app.listen(PORT, async () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);

@@ -43,6 +43,6 @@ export const execute = <T>(
     });
   } catch (error) {
     console.error("[Error]: ", error);
-    throw new Error("Fail to query!");
+    throw error;
   }
 };
