@@ -14,3 +14,7 @@ export const DATA_SOURCES = {
 };
 
 export const PORT = process.env.BINOTIFY_APP_WEB_PORT || 8080;
+
+export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET!;
+
+export const PW_HASH_TYPE = process.env.PW_HASH_TYPE!;
