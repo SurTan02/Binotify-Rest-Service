@@ -14,8 +14,7 @@ router.post("/register", async (req, res) => {
     );
 
     return res.sendStatus(200);
-  } catch (e) {
-    console.log(e);
+  } catch {
     return res.sendStatus(500);
   }
 });
