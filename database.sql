@@ -17,7 +17,7 @@ CREATE TABLE `database`.`User`
 
 CREATE TABLE `database`.`Song`
 (
-    `song_id`       INT,
+    `song_id`       INT AUTO_INCREMENT,
     `judul`         VARCHAR(64)  NOT NULL,
     `penyanyi_id`   INT          NOT NULL,
     `audio_path`    VARCHAR(256) NOT NULL,
