@@ -19,4 +19,4 @@ export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'rahasia';
 
 export const PW_HASH_TYPE = process.env.PW_HASH_TYPE || 'sha256';
 
-export const SOAP_SERVICE_URL = process.env.SOAP_SERVICE_URL || 'http://localhost:8081/com/binotifysoap/SubscriptionService';
+export const SOAP_SERVICE_URL = process.env.SOAP_SERVICE_URL || 'http://binotify-soap-service:8081/com/binotifysoap/SubscriptionService';
