@@ -1,26 +1,22 @@
 import { Router } from "express";
-import { sign } from "jsonwebtoken";
-import { ACCESS_TOKEN_SECRET } from "../config/vars.config";
 import * as db from "../db/connection";
-import hash from "../helper/hash.helper";
 import { ISong } from "../model/song.model";
-import { authorizeRole, authenticateToken  } from "../middleware/auth.middleware";
+import { authenticateToken  } from "../middleware/auth.middleware";
 
 const router = Router();
 
 // read song
 router.get("/song", authenticateToken, async (req, res) => {
-        try {
-            const penyanyi_id = req.user.user_id;
-            const listOfSong: ISong[] = await db.execute(
-            `SELECT * FROM Song WHERE penyanyi_id = ?`,
-            [penyanyi_id]
+    try {
+        const penyanyi_id = (<any>req).user.user_id;
+        const listOfSong: ISong[] = await db.execute(
+            `SELECT * FROM Song WHERE penyanyi_id = ?`,[penyanyi_id]
         );
-  
+
         return res.json(listOfSong);
-      } catch (e) {
+    } catch (e) {
         return res.sendStatus(500);
-      }
+    }
     }
 );
 
@@ -28,12 +24,12 @@ router.get("/song", authenticateToken, async (req, res) => {
 router.post("/song", authenticateToken, async (req, res) => {
     try {
         const { song_id, judul, audio_path } = req.body;
-        const penyanyi_id = req.user.user_id;
+        const penyanyi_id = (<any>req).user.user_id;
 
         const listOfSong: ISong[] = await db.execute(
             `INSERT INTO Song (judul, penyanyi_id, audio_path) VALUES 
             (?,?,?)`, 
-            [song_id, judul, penyanyi_id, audio_path]
+            [ judul, penyanyi_id, audio_path]
         );
         
         return res.sendStatus(200);
@@ -46,14 +42,14 @@ router.post("/song", authenticateToken, async (req, res) => {
 router.patch("/song", authenticateToken, async (req, res) => {
     try {
         const { song_id, judul, audio_path } = req.body;
-        const penyanyi_id = req.user.user_id;
+        const penyanyi_id = (<any>req).user.user_id;
         
         const listOfSong: ISong[] = await db.execute(
             `UPDATE Song SET judul = ?, audio_path = ? WHERE song_id = ? and penyanyi_id = ?`, 
             [judul,  audio_path, song_id, penyanyi_id]
         );
 
-        if (listOfSong.affectedRows > 0){
+        if ((<any>listOfSong).affectedRows > 0){
             return res.sendStatus(200);
         }else{
             return res.sendStatus(403)
@@ -68,14 +64,14 @@ router.patch("/song", authenticateToken, async (req, res) => {
 router.delete("/song", authenticateToken, async (req, res) => {
     try {
         const { song_id} = req.body;
-        const penyanyi_id = req.user.user_id;
+        const penyanyi_id = (<any>req).user.user_id;
         
         const listOfSong: ISong[] = await db.execute(
             `DELETE FROM Song WHERE song_id = ? and penyanyi_id = ?`, 
             [song_id, penyanyi_id]
         );
         
-        if (listOfSong.affectedRows > 0){
+        if ((<any>listOfSong).affectedRows > 0){
             return res.sendStatus(200);
         }else{
             return res.sendStatus(403)
