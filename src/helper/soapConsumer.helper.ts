@@ -1,5 +1,7 @@
 import axios from "axios";
 import { SOAP_SERVICE_URL } from "../config/vars.config";
+import { transform } from "camaro";
+
 
 export function soapConsumer(xmls: string) {
   return new Promise((resolve, reject) => {
@@ -28,4 +30,10 @@ export function soapConsumer(xmls: string) {
         }
       });
   });
+}
+
+export async function getAsJson(xmls: string, template : object) {  
+      const result = await soapConsumer(xmls);
+      let jsonResult = await transform((<any>result).response.body, template);
+      return JSON.stringify(jsonResult, null, 2);  
 }

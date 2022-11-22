@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { soapConsumer } from "../helper/soapConsumer.helper";
+import { getAsJson, soapConsumer } from "../helper/soapConsumer.helper";
 import {
   authenticateToken,
   authorizeRole,
 } from "../middleware/auth.middleware";
-import { transform } from "camaro";
+import { subscription_template } from "../config/template.config";
+
 
 const router = Router();
 
@@ -21,18 +22,8 @@ router.get("/subscription", async (req, res) => {
       </soapenv:Body>\
     </soapenv:Envelope>';
 
-  const result = await soapConsumer(xmls);
-  
-  const template = {
-    subscription: ['//subscription', {
-        creator_id: 'creatorId',
-        subscriber_id: 'subscriberId',
-        status: 'status'
-    }]
-  }
-
-  let jsonResult = await transform((<any>result).response.body, template);
-  return res.send(JSON.stringify(jsonResult, null, 2));
+  const result = await getAsJson(xmls, subscription_template);
+  return res.send(result);
 });
 
 export { router as subscription };
