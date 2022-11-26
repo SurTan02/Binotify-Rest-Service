@@ -1,21 +1,15 @@
 import express, { Express, Request, Response } from "express";
-import { PORT } from "./config/vars.config";
+import { corsOptions, PORT } from "./config/vars.config";
 import * as db from "./db/connection";
 import { routes } from "./routes/routes";
-var cors = require('cors')
-
-const corsOptions ={
-  origin:'http://localhost:5173', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
-
+import cors from "cors";
 
 db.init();
 
 const app: Express = express();
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors(corsOptions));
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
@@ -25,7 +19,6 @@ app.get("/", (req: Request, res: Response) => {
   );
 });
 
-app.use(cors(corsOptions));
 app.use(routes);
 
 app.listen(PORT, async () => {
