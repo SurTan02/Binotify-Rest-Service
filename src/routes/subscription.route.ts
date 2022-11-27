@@ -4,9 +4,7 @@ import {
   authenticateToken,
   authorizeRole,
 } from "../middleware/auth.middleware";
-import { subscription_template } from "../config/template.config";
-
-
+import { subscription_template, update_template } from "../config/template.config";
 
 const router = Router();
 
@@ -14,12 +12,10 @@ const router = Router();
 router.get("/subscription", async (req, res) => {
   /* CODE HERE */
   var current = 1;
-  if (req.query.page){
-    current = parseInt(req.query.page as string); 
+  if (req.query.page) {
+    current = parseInt(req.query.page as string);
   }
-
-  let xmls =
-    `\
+  let xmls = `\
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.binotifysoap.com/">\
         <soapenv:Header/>\
         <soapenv:Body>\
@@ -36,9 +32,8 @@ router.get("/subscription", async (req, res) => {
 // Update subscription
 router.patch("/subscription", async (req, res) => {
   /* CODE HERE */
-  const { creator_id, subscriber_id, status} = req.body;
-  let xmls =
-    `\
+  const { creator_id, subscriber_id, status } = req.body;
+  let xmls = `\
     <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.binotifysoap.com/">\
         <soapenv:Header/>\
         <soapenv:Body>\
@@ -49,12 +44,12 @@ router.patch("/subscription", async (req, res) => {
           </ser:UpdateSubscription>\
       </soapenv:Body>\
     </soapenv:Envelope>`;
-  
-    const result = await soapConsumer(xmls);
+
+  const result = await getAsJson(xmls, update_template);
+  return res.send(200);
 });
 
 export { router as subscription };
-
 
 // ADD Request, tar dipake di php
 // '\

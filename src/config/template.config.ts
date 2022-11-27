@@ -9,3 +9,7 @@ export const subscription_template = {
         }]
     }]
 }
+
+export const update_template = {
+    result : '//ns2:UpdateSubscriptionResponse'
+}
