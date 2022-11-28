@@ -3,6 +3,9 @@ import { corsOptions, PORT } from "./config/vars.config";
 import * as db from "./db/connection";
 import { routes } from "./routes/routes";
 import cors from "cors";
+import FileUpload from "express-fileupload";
+var path = require('path');
+
 
 db.init();
 
@@ -18,8 +21,9 @@ app.get("/", (req: Request, res: Response) => {
     </h1>`
   );
 });
-
+app.use(FileUpload());
 app.use(routes);
+app.use("/public", express.static(path.resolve('/usr/src/app/src/public')));
 
 app.listen(PORT, async () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
