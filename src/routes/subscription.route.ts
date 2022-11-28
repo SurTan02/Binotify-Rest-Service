@@ -9,7 +9,7 @@ import { subscription_template, update_template } from "../config/template.confi
 const router = Router();
 
 // Get subscribe request
-router.get("/subscription", async (req, res) => {
+router.get("/subscription", authenticateToken, authorizeRole, async (req, res) => {
   /* CODE HERE */
   var current = 1;
   if (req.query.page) {
@@ -30,7 +30,7 @@ router.get("/subscription", async (req, res) => {
 });
 
 // Update subscription
-router.patch("/subscription", async (req, res) => {
+router.patch("/subscription", authenticateToken, authorizeRole, async (req, res) => {
   /* CODE HERE */
   const { creator_id, subscriber_id, status } = req.body;
   let xmls = `\

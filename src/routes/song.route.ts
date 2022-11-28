@@ -9,11 +9,22 @@ const router = Router();
 router.get("/song", authenticateToken, async (req, res) => {
     try {
         const penyanyi_id = (<any>req).user.user_id;
+        var current_page = parseInt(req.query.page as string) || 1;
+
+        let rows: number = await db.execute(
+            `SELECT COUNT(*) as n_rows FROM Song WHERE penyanyi_id = ?`,[penyanyi_id]
+        );
+        
+        const total_row = JSON.parse(JSON.stringify(rows))[0].n_rows;
+        const total_pages : any = Math.ceil(total_row/10)
+        const offset_number = (current_page-1)*10
+        
         const listOfSong: ISong[] = await db.execute(
-            `SELECT * FROM Song WHERE penyanyi_id = ?`,[penyanyi_id]
+            `SELECT * FROM Song WHERE penyanyi_id = ? LIMIT 10 OFFSET ?`,[penyanyi_id, offset_number.toString()]
         );
 
-        return res.json(listOfSong);
+        return res.json({"total_page" : total_pages , "list" : listOfSong});
+
     } catch (e) {
         return res.sendStatus(500);
     }
