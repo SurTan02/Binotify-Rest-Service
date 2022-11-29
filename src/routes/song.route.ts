@@ -52,9 +52,9 @@ router.get("/song/:creator_id/:subscriber_id", async (req, res) => {
         
         const soapResponse = await getAsJson(xmls, validate_template);
         
-        const isValid : number = JSON.parse(soapResponse).result;
+        const status : String = JSON.parse(soapResponse).result;
         
-        if(isValid == 0){
+        if(status !== "ACCEPTED"){
             return res.sendStatus(401);
         }
 
