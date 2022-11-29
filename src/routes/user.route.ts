@@ -6,7 +6,7 @@ import { authenticateToken } from "../middleware/auth.middleware";
 const router = Router();
 
 // get user
-router.get("/user", authenticateToken, async (req, res) => {
+router.get("/user",  async (req, res) => {
   try {
     const user_id = (<any>req).user.user_id;
     const listOfUser: IUser[] = await db.execute(
