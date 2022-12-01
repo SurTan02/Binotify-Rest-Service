@@ -3,8 +3,8 @@ export const subscription_template = {
         current: 'number(currentPage)',
         total: 'number(totalPages)',
         subscription: ['//subscription', {
-            creator_id: 'number(creatorId)',
-            subscriber_id: 'number(subscriberId)',
+            creator_id: 'number(creator_id)',
+            subscriber_id: 'number(subscriber_id)',
             status: 'status'
         }]
     }]
