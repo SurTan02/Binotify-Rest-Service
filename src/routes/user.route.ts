@@ -6,15 +6,15 @@ import { authenticateToken } from "../middleware/auth.middleware";
 const router = Router();
 
 // get user
-router.get("/user", authenticateToken, async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
-    const user_id = (<any>req).user.user_id;
-    const listOfUser: IUser[] = await db.execute(
-      `SELECT * FROM User WHERE user_id = ?`,
-      [user_id]
+    const SOMETHING = "tes gaguna sih ni";
+    const listOfSong: IUser[] = await db.execute(
+      `SELECT * FROM User WHERE isAdmin = False`,
+      [SOMETHING]
     );
 
-    return res.json(listOfUser);
+    return res.json(listOfSong);
   } catch (e) {
     return res.sendStatus(500);
   }
