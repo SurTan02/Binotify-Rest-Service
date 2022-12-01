@@ -4,9 +4,11 @@ import * as db from "./db/connection";
 import { routes } from "./routes/routes";
 import cors from "cors";
 import FileUpload from "express-fileupload";
+import * as cache from "./db/cache";
 var path = require("path");
 
 db.init();
+cache.init();
 
 const app: Express = express();
 

@@ -24,9 +24,13 @@ export const SOAP_SERVICE_URL =
   "http://binotify-soap-service:8081/com/binotifysoap/SubscriptionService";
 
 export const corsOptions = {
-  origin: process.env.CLIENT_HOST ||"http://localhost:5173",
+  origin: process.env.CLIENT_HOST || "http://localhost:5173",
   credentials: true,
   optionSuccessStatus: 200,
 };
 
 export const SOAP_API_KEY = process.env.SOAP_API_KEY;
+
+export const REDIS_URL =
+  process.env.REDIS_URL || "http://binotify-rest-service-cache";
+export const REDIS_PORT: number = Number(process.env.REDIS_PORT) || 6379;
