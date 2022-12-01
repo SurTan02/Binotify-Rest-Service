@@ -32,5 +32,5 @@ export const corsOptions = {
 export const SOAP_API_KEY = process.env.SOAP_API_KEY;
 
 export const REDIS_URL =
-  process.env.REDIS_URL || "http://binotify-rest-service-cache";
+  process.env.REDIS_URL || "binotify-rest-service-cache";
 export const REDIS_PORT: number = Number(process.env.REDIS_PORT) || 6379;

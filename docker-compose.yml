@@ -29,3 +29,11 @@ services:
       timeout: 30s
       retries: 5
       start_period: 30s
+
+    binotify-rest-service-cache:
+      image: redis:7.0-alpine
+      restart: always
+      ports:
+        - "6379:6379"
+      environment:
+        - ALLOW_EMPTY_PASSWORD=yes

@@ -4,6 +4,7 @@ import * as db from "../db/connection";
 import hash from "../helper/hash.helper";
 import { sign } from "jsonwebtoken";
 import { ACCESS_TOKEN_SECRET } from "../config/vars.config";
+import { cache } from "../db/cache";
 
 const router = Router();
 
@@ -16,10 +17,13 @@ router.post("/register", async (req, res) => {
       [email, hash(password), username, name]
     );
 
+    
     const account: IUser[] = await db.execute(
       `SELECT * FROM User WHERE username = ? AND password = ?`,
       [username, hash(password)]
-    );
+      );
+      
+    await cache().set(account[0].user_id.toString(), account[0].name);
 
     const accessToken = sign(
       {

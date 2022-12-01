@@ -8,7 +8,6 @@ import * as cache from "./db/cache";
 var path = require("path");
 
 db.init();
-cache.init();
 
 const app: Express = express();
 
@@ -26,6 +25,8 @@ app.use(FileUpload());
 app.use(routes);
 app.use("/public", express.static(path.resolve("/usr/src/app/src/public")));
 
-app.listen(PORT, async () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+cache.init().then(() => {
+  app.listen(PORT, async () => {
+    console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
+  });
 });
