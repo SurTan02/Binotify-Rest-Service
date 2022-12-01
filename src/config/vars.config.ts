@@ -28,3 +28,5 @@ export const corsOptions = {
   credentials: true,
   optionSuccessStatus: 200,
 };
+
+export const SOAP_API_KEY = process.env.SOAP_API_KEY;

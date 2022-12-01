@@ -2,6 +2,8 @@ import { Router } from "express";
 import * as db from "../db/connection";
 import { ISong } from "../model/song.model";
 import { authenticateToken  } from "../middleware/auth.middleware";
+import { getAsJson } from "../helper/soapConsumer.helper";
+import { validate_template } from "../config/template.config";
 
 const router = Router();
 
@@ -25,6 +27,41 @@ router.get("/song", authenticateToken, async (req, res) => {
 
         return res.json({"total_page" : total_pages , "list" : listOfSong});
 
+    } catch (e) {
+        return res.sendStatus(500);
+    }
+    }
+);
+
+// Song by ID
+router.get("/song/:creator_id/:subscriber_id", async (req, res) => {
+    try {
+        const creator_id = req.params.creator_id;
+        const subscriber_id = req.params.subscriber_id;
+        
+        let xmls = `\
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.binotifysoap.com/">\
+            <soapenv:Header/>\
+            <soapenv:Body>\
+            <ser:ValidateSubscription>\
+                <creator_id>${creator_id}</creator_id>\
+                <subscriber_id>${subscriber_id}</subscriber_id>\
+            </ser:ValidateSubscription>\
+        </soapenv:Body>\
+        </soapenv:Envelope>`;
+        
+        const soapResponse = await getAsJson(xmls, validate_template);
+        
+        const status : String = JSON.parse(soapResponse).result;
+        
+        if(status !== "ACCEPTED"){
+            return res.sendStatus(401);
+        }
+
+        const listOfSong: ISong[] = await db.execute(
+            `SELECT judul, audio_path, name FROM Song, User WHERE penyanyi_id = ? AND user_id=penyanyi_id`,[creator_id]
+        );
+        return res.json(listOfSong);
     } catch (e) {
         return res.sendStatus(500);
     }

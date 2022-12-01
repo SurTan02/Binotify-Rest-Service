@@ -1,3 +1,4 @@
+import { SOAP_API_KEY } from "./../config/vars.config";
 import axios from "axios";
 import { SOAP_SERVICE_URL } from "../config/vars.config";
 import { transform } from "camaro";
@@ -8,7 +9,7 @@ export function soapConsumer(xmls: string) {
       .post(SOAP_SERVICE_URL, xmls, {
         headers: {
           "Content-Type": "text/xml;charset=UTF-8",
-          "x-api-key": "",
+          "x-api-key": SOAP_API_KEY,
         },
       })
       .then((response) => {
