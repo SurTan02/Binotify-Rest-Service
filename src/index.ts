@@ -4,15 +4,14 @@ import * as db from "./db/connection";
 import { routes } from "./routes/routes";
 import cors from "cors";
 import FileUpload from "express-fileupload";
-var path = require('path');
-
+var path = require("path");
 
 db.init();
 
 const app: Express = express();
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
   res.send(
@@ -23,7 +22,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 app.use(FileUpload());
 app.use(routes);
-app.use("/public", express.static(path.resolve('/usr/src/app/src/public')));
+app.use("/public", express.static(path.resolve("/usr/src/app/src/public")));
 
 app.listen(PORT, async () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
