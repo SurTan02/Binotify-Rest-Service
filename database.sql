@@ -25,20 +25,46 @@ CREATE TABLE `database`.`Song`
     FOREIGN KEY (`penyanyi_id`) REFERENCES `User` (`user_id`)
 );
 
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (0, 'binotify88@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', 'admin', 1);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (1, 'bri@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'bri', 'bri', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (2, 'sur@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'sur', 'sur', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (3, 'fikron@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'fikron', 'fikron', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (4, 'viel@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'viel', 'viel', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (5, 'celo@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'celo', 'celo', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (6, 'wiwid@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'wiwid', 'wiwid', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (7, 'dzaki@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'dzaki', 'dzaki', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (8, 'rifqi@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'rifqi', 'rifqi', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (9, 'malik@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'malik', 'malik', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (10, 'akbar@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'akbar', 'akbar', 0);
-INSERT INTO `database`.`User` (`user_id`, `email`, `password`, `username`, `name`, `isAdmin`) VALUES (11, 'hafidz@gmail.com', '0f8812a927c250196f935b61a6016d849d08989e67cdf810521f9d4b8e68ee7b', 'hafidz', 'hafidz', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('binotify88@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'admin', 'admin', 1);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('bri@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'bri', 'bri', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('sur@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'sur', 'sur', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('fikron@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'fikron', 'fikron', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('viel@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'viel', 'viel', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('celo@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'celo', 'celo', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('wiwid@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'wiwid', 'wiwid', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('dzaki@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'dzaki', 'dzaki', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('rifqi@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'rifqi', 'rifqi', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ('malik@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'malik', 'malik', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ( 'akbar@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'akbar', 'akbar', 0);
+INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ( 'hafidz@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'hafidz', 'hafidz', 0);
 
-
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Summer`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`We Will Rock You`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Killer Queen`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`We Are the Champions`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Let it Be`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Hey Jude`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Winter`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Diam`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mars HMIF`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mars HMJ`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Happy`, 4, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu Baru`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Diam Seribu Bahasa`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Earth`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Fall`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sad`, 4, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu Lama`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Silent`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Venus`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Jatuh`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mad`, 4, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Gajah`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Omega`, 3, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Close`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sky`, 2, `public/Summer.mp3`)
+INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Alpha`, 4, `public/Summer.mp3`)
 
 
 
