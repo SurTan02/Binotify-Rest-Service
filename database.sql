@@ -38,34 +38,33 @@ INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin
 INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ( 'akbar@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'akbar', 'akbar', 0);
 INSERT INTO `database`.`User` (`email`, `password`, `username`, `name`, `isAdmin`) VALUES ( 'hafidz@gmail.com', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 'hafidz', 'hafidz', 0);
 
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Summer`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`We Will Rock You`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Killer Queen`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`We Are the Champions`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Let it Be`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Hey Jude`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Winter`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Diam`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mars HMIF`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mars HMJ`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Happy`, 4, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu Baru`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Diam Seribu Bahasa`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Earth`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Fall`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sad`, 4, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sepatu Lama`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Silent`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Venus`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Jatuh`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Mad`, 4, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Gajah`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Omega`, 3, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Close`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Sky`, 2, `public/Summer.mp3`)
-INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES (`Alpha`, 4, `public/Summer.mp3`)
-
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Summer', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('We Will Rock You', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Killer Queen', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('We Are the Champions', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Let it Be', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Hey Jude', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Winter', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Sepatu', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Diam', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Mars HMIF', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Mars HMJ', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Happy', 4, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Sepatu Baru', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Diam Seribu Bahasa', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Earth', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Fall', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Sad', 4, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Sepatu Lama', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Silent', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Venus', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Jatuh', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Mad', 4, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Gajah', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Omega', 3, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Close', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Sky', 2, 'public/Summer.mp3');
+-- INSERT INTO `database`.`Song` (`judul`, `penyanyi_id`, `audio_path`) VALUES ('Alpha', 4, 'public/Summer.mp3');
 
 
 
